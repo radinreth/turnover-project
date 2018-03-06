@@ -1,2 +1,24 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+<h1>Turnover Report:</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>Employee Name</th>
+    <th>Hire Date</th>
+    <th>Leave Date</th>
+    <th>Location</th>
+    <th>Department</th>
+  </tr>
+  <% @employees.each_with_index do |employee, i| %>
+  <tr>
+    <th><%= i + 1 %></th>
+    <td><%= employee.name %></td>
+    <td><%= employee.hire_date %></td>
+    <td><%= employee.leave_date %></td>
+    <td><%= employee.location %></td>
+    <td><%= employee.department %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= paginate @employees %>
